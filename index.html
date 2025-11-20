@@ -93,6 +93,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="preload" as="image" href="/pexels-medhat-ayad-122846-439227.jpg">
 
     <style>
         /* ---------------------------------- */
@@ -110,6 +111,11 @@
             --header-height: 90px;
             --header-height-scrolled: 60px;
         }
+        html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* mandatory for iPhones */
+}
+
 
         * {
             margin: 0;
@@ -296,7 +302,21 @@
             text-align: center;
              will-change: transform;  /* enhances GPU acceleration */
     transform: translateZ(0); /* forces GPU layer */
+               position: relative;
+               overflow: hidden;
+    background: #121212;
         }
+
+        .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/pexels-medhat-ayad-122846-439227.jpg") center/cover no-repeat;
+    opacity: 0.25;
+    z-index: -1;
+    will-change: opacity, transform;
+}
+
 
         .hero-content {
             opacity: 1;
