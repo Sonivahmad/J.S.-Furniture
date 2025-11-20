@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J.S. Furniture ® | Luxury Solid Wood Furniture | Kirti Nagar Delhi</title>
+    <meta name="description"
+        content="Premium handcrafted solid wood furniture manufacturer in Kirti Nagar. Specializing in luxury double beds, poster beds, console sets & custom interior designs." />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <style>
+        /* ---------------------------------- */
+        /* 1. VARIABLES & BASE STYLES (LIGHT) */
+        /* ---------------------------------- */
+        :root {
+            --gold: #c49a6c;
+            --light-bg: #fcfcfc;
+            --card-bg: #ffffff;
+            --text-main: #222222;
+            --text-secondary: #666666;
+            --border: rgba(0, 0, 0, 0.1);
+            --shadow-base: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --max-width: 1440px;
+            --header-height: 90px;
+            --header-height-scrolled: 60px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--gold);
+            transition: color 0.3s, opacity 0.3s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Global Animations - Fade In on Scroll */
+        [data-animate] {
+            opacity: 1;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+            color: rgba(166, 155, 155, 0.977);
+        }
+
+        [data-animate].fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Headings */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        h2 span {
+            background: linear-gradient(90deg, #c49a6c, #a87e58);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-style: italic;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: var(--gold);
+            color: white;
+            font-weight: 600;
+            border-radius: 5px;
+            margin-top: 2rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(196, 154, 108, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #d8aa7e;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(196, 154, 108, 0.4);
+        }
+
+        /* ---------------------------------- */
+        /* 2. NAVIGATION & HEADER */
+        /* ---------------------------------- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            height: var(--header-height-scrolled);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 2px;
+            transition: font-size 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.6rem;
+            color: var(--text-main);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            padding-top: var(--header-height);
+            background:  linear-gradient(to bottom, rgba(0, 0, 0, 0.538), rgba(0,0,0,0.6)), url('pexels-medhat-ayad-122846-439227.jpg') center 30%/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s, transform 1s;
+        }
+
+        /* Ensure hero content is visible */
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #c49a6c, #a87e58, #c49a6c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* ---------------------------------- */
+        /* 3. SECTION COMPONENTS */
+        /* ---------------------------------- */
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            /* Make about image a consistent visual block on desktop */
+            height: 440px;
+            display: block;
+            width: 100%;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.03);
+            padding-left: 35px;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .feature::before {
+            content: '✓';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* Contact Actions */
+        .contact-actions {
+            background: #f0f0f0;
+            padding: 40px 0;
+        }
+
+        .action-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .action-card {
+            padding: 1.5rem;
+            border-radius: 6px;
+            flex: 1;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .action-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-card i {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            align-items: stretch;
+        }
+
+        .gallery-item {
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: var(--shadow-base);
+            transition: all 0.3s;
+            height: 360px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Map */
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 2.5rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        /* ---------------------------------- */
+        /* 4. CHATBOT & FLOATERS */
+        /* ---------------------------------- */
+        .whatsapp-float,
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float {
+            background: #25d366;
+            animation: pulse 2.5s infinite;
+        }
+
+        .chatbot-toggle {
+            background: var(--gold);
+            bottom: 100px;
+            animation: pulse-gold 2.5s infinite;
+        }
+
+        .whatsapp-float:hover,
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-window {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 1001;
+            width: 330px;
+            height: 400px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.1);
+            opacity: 0;
+            pointer-events: none;
+            transform-origin: bottom right;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .chatbot-window.active {
+            transform: scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .chatbot-header {
+            background: var(--gold);
+            color: white;
+            padding: 0.7rem 1rem;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-messages {
+            flex-grow: 1;
+            padding: 0.8rem;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+
+        .chatbot-message {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 8px;
+            max-width: 85%;
+            font-size: 0.85rem;
+        }
+
+        .chatbot-message.user {
+            background: var(--gold);
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 2px;
+        }
+
+        .chatbot-message.bot {
+            background: #e0e0e0;
+            color: var(--text-main);
+            margin-right: auto;
+            border-bottom-left-radius: 2px;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 0.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .chatbot-input input {
+            flex-grow: 1;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            background: #f5f5f5;
+        }
+
+        .chatbot-input button {
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        /* ---------------------------------- */
+        /* 4.5 GST TAG */
+        /* ---------------------------------- */
+        .gst-tag {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            color: rgba(166, 155, 155, 0.977);
+        }
+
+        /* ---------------------------------- */
+        /* 5. FOOTER */
+        /* ---------------------------------- */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer .logo {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        footer .footer-links {
+            margin: 1.5rem 0;
+        }
+
+        footer a {
+            color: var(--gold);
+            margin: 0 0.5rem;
+        }
+
+        /* ---------------------------------- */
+        /* 5.5 CONSULTATION MODAL */
+        /* ---------------------------------- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1002;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .consultation-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            z-index: 1003;
+            width: 90%;
+            max-width: 500px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            padding: 2.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .consultation-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .modal-close:hover {
+            color: var(--gold);
+            background: var(--light-bg);
+            transform: rotate(90deg);
+        }
+
+        .consultation-modal h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+            color: var(--text-main);
+        }
+
+        .modal-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            background: var(--light-bg);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(196, 154, 108, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 0.95rem 1.5rem;
+            background: linear-gradient(135deg, var(--gold), #d8aa7e);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(196, 154, 108, 0.3);
+            margin-top: 1rem;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(196, 154, 108, 0.4);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 15px rgba(196, 154, 108, 0.3);
+        }
+
+        .form-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        /* ---------------------------------- */
+        /* 5.6 ENHANCED ANIMATIONS & EFFECTS */
+        /* ---------------------------------- */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.4s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        /* Stagger animation for gallery items */
+        .gallery-item {
+            animation: slideIn 0.6s ease backwards;
+        }
+
+        .gallery-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .gallery-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .gallery-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .gallery-item:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        /* Action card enhancement */
+        .action-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(196, 154, 108, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .action-card:hover::after {
+            opacity: 1;
+        }
+
+        /* Smooth section entrance */
+        section {
+            animation: sectionFade 0.8s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes sectionFade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @keyframes pulse-gold {
+            0% {
+                box-shadow: 0 0 0 0 rgba(196, 154, 108, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(196, 154, 108, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(196, 154, 108, 0);
+            }
+        }
+
+        /* ---------------------------------- */
+        /* 7. MEDIA QUERIES (RESPONSIVENESS) */
+        /* ---------------------------------- */
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            /* Mobile Nav Menu Setup */
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                right: 0;
+                height: calc(100vh - var(--header-height));
+                background: var(--card-bg);
+                flex-direction: column;
+                padding: 40px 0;
+                gap: 1.5rem;
+                align-items: center;
+                border-top: 1px solid var(--border);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+            /* Responsive adjustment for about image on small screens */
+            .about-img {
+                height: auto; /* let image scale naturally in single-column layout */
+            }
+            .about-img img {
+                height: auto;
+                max-height: 520px;
+                object-fit: cover;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .action-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Mobile Chatbot Position */
+            .chatbot-window {
+                width: 90%;
+                right: 5%;
+                bottom: 80px;
+            }
+
+            .chatbot-toggle {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float {
+                bottom: 90px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .consultation-modal {
+                width: 95%;
+                max-width: calc(100% - 20px);
+            }
+
+            .consultation-modal h2 {
+                font-size: 1.6rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">J.S. FURNITURE</a>
+            <div class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">Our Legacy</a>
+                <a href="#gallery">Collection</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="mobile-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1 data-animate>J.S. FURNITURE</h1>
+            <p class="tagline" data-animate style="transition-delay: 0.1s;">Crafting Luxury, Defining Interiors.</p>
+            <p data-animate style="transition-delay: 0.2s;">Premium Handcrafted <strong>Solid Wood Furniture</strong>
+                Manufacturer in Kirti Nagar, New Delhi.</p>
+            <a href="#contact" class="btn-primary" data-animate style="transition-delay: 0.3s;"><i
+                    class="fas fa-calendar-alt"></i> Book A Design Consultation</a>
+            <div class="gst-tag" data-animate style="transition-delay: 0.4s;">GSTIN: 07AFYPH3251F1ZB</div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 data-animate>Our <span>Legacy</span></h2>
+            <div class="about-grid">
+                <div class="about-img" data-animate>
+                    <img src="js3.jpg" alt="J.S. Furniture Showroom Kirti Nagar" loading="lazy">
+                </div>
+                <div class="about-text" data-animate style="transition-delay: 0.2s;">
+                    <h3>Excellence in the Heart of Kirti Nagar Timber Market</h3>
+                    <p>For decades, <strong>J.S. Furniture</strong> has stood as a beacon of trust and quality in
+                        Delhi's renowned Kirti Nagar Timber Market. We blend traditional craftsmanship with modern
+                        design to create pieces that last for generations.</p>
+                    <p>Our specialization includes the manufacturing of luxury <strong>double beds</strong>, intricate
+                        <strong>poster beds</strong>, innovative <strong>hydraulic storage solutions</strong>, bespoke
+                        <strong>console sets</strong>, and comprehensive interior furnishing.</p>
+                    <div class="features">
+                        <div class="feature">Factory Direct Pricing</div>
+                        <div class="feature">Guaranteed 100% Solid Wood</div>
+                        <div class="feature">Bespoke Custom Designs</div>
+                        <div class="feature">Reliable Pan India Delivery</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-actions">
+        <div class="container">
+            <div class="action-grid">
+                <a href="tel:+919899805983" class="action-card" data-animate>
+                    <i class="fas fa-phone"></i>
+                    <h4>Direct Call</h4>
+                    <p>98998 05983</p>
+                </a>
+                <a href="https://wa.me/919899805983?text=I%27m%20interested%20in%20a%20design%20consultation."
+                    target="_blank" class="action-card" data-animate style="transition-delay: 0.15s;">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>Instant WhatsApp</h4>
+                    <p>Chat with a consultant now</p>
+                </a>
+                <a href="mailto:sales@jsfurniture.com?subject=Inquiry%20from%20Website" class="action-card" data-animate
+                    style="transition-delay: 0.3s;">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email Us</h4>
+                    <p>sales@jsfurniture.com</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2 data-animate>Featured <span>Collection</span></h2>
+            <div class="gallery">
+                <div class="gallery-item" data-animate style="transition-delay: 0.1s;"><img src="js91.jpg"
+                        alt="Premium Double Bed with Headboard" loading="lazy"></div>
+                <div class="gallery-item" data-animate style="transition-delay: 0.1s;"><img
+                        src="js6.webp"
+                        alt="Royal Poster Bed" loading="lazy"></div>
+                <div class="gallery-item" data-animate style="transition-delay: 0.2s;"><img
+                        src="js7.webp"
+                        alt="Hydraulic Storage Bed" loading="lazy"></div>
+                <div class="gallery-item" data-animate style="transition-delay: 0.3s;"><img src="js10.webp"
+                        alt="Luxury Gold Console & Mirror Set" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 data-animate>Visit Our <span>Showroom</span></h2>
+
+            <div class="map-container" data-animate style="transition-delay: 0.2s;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.077202324792!2d77.12799307431776!3d28.657572775647558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0322b0c9527d%3A0xc3f3b92d777e52a4!2sJ.S.%20Furniture!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Location of J.S. Furniture in Kirti Nagar Timber Market">
+                </iframe>
+            </div>
+
+            <div class="contact-grid">
+                <address class="contact-card" data-animate style="transition-delay: 0.4s;">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Showroom Address</h3>
+                    <p>B-1, W.H.S. Timber Market</p>
+                    <p>Kirti Nagar, New Delhi - 110015</p>
+                </address>
+                <div class="contact-card" data-animate style="transition-delay: 0.5s;">
+                    <i class="fas fa-route"></i>
+                    <h3>Quick Access</h3>
+                    <p>Closest Landmark: <strong>Kirti Nagar Metro Station</strong></p>
+                    <p>Find us in the W.H.S. Timber Market area.</p>
+                </div>
+                <div class="contact-card" data-animate style="transition-delay: 0.6s;">
+                    <i class="fas fa-clock"></i>
+                    <h3>Working Hours</h3>
+                    <p>Mon–Sat: 10:00 AM – 8:00 PM</p>
+                    <p>Sunday: 11:00 AM – 6:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/919899805983?text=Namaste!%20I'm%20interested%20in%20your%20furniture%20collection"
+        class="whatsapp-float" target="_blank" aria-label="WhatsApp Chat">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="chatbot-toggle" id="chatbot-toggle" aria-label="Open Chatbot">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chatbot-window" id="chatbot-window">
+        <div class="chatbot-header">
+            <span>J.S. Furniture Assistant</span>
+            <button class="close-btn" id="chatbot-close-btn"
+                style="color: white; border: none; background: none; font-size: 1.2rem; cursor: pointer;"><i
+                    class="fas fa-times"></i></button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="chatbot-message bot">👋 Hello! How can I assist you with J.S. Furniture's luxury collection
+                today?</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Ask about designs, hours, or address..." />
+            <button id="chatbot-send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="logo">J.S. FURNITURE</div>
+            <p>Luxury Solid Wood Furniture, Manufactured in New Delhi. Quality guaranteed.</p>
+            <div class="footer-links">
+                <a href="#about">Our Story</a> |
+                <a href="#gallery">Collection</a> |
+                <a href="#contact">Visit Us</a>
+            </div>
+            <p>© 2025 J.S. Furniture. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Consultation Modal -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="consultation-modal" id="consultation-modal">
+        <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
+        <div class="modal-content">
+            <h2>Book Your Design Consultation</h2>
+            <p class="modal-subtitle">Our expert designers are ready to transform your space</p>
+
+            <form id="consultation-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+91 98998 05983">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service of Interest *</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Select a service --</option>
+                        <option value="double-bed">Luxury Double Beds</option>
+                        <option value="poster-bed">Poster Beds</option>
+                        <option value="storage">Hydraulic Storage Solutions</option>
+                        <option value="console">Console Sets</option>
+                        <option value="custom">Custom Interior Design</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell us about your vision *</label>
+                    <textarea id="message" name="message" required
+                        placeholder="Describe your design preferences, budget, timeline..." rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Schedule Consultation</button>
+                <p class="form-note">We'll contact you within 24 hours to confirm your appointment</p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for Scroll Animations
+        // NOTE: Elements are initially visible now; this Observer adds the "fade-in" class after they enter the viewport.
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-animate]').forEach(element => {
+            observer.observe(element);
+        });
+
+        // 0. CONSULTATION MODAL LOGIC
+        const consultationBtn = document.querySelector('.btn-primary[href="#contact"]');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const consultationModal = document.getElementById('consultation-modal');
+        const modalClose = document.getElementById('modal-close');
+        const consultationForm = document.getElementById('consultation-form');
+
+        // Open modal when button clicked
+        consultationBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modalOverlay.classList.add('active');
+            consultationModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close modal when close button clicked
+        modalClose.addEventListener('click', () => {
+            modalOverlay.classList.remove('active');
+            consultationModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when overlay clicked
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('active');
+                consultationModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && consultationModal.classList.contains('active')) {
+                modalOverlay.classList.remove('active');
+                consultationModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Handle form submission
+        consultationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+
+            // Create WhatsApp message
+            const whatsappMessage = `Hello, I would like to book a design consultation.
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Service: ${formData.service}
+Message: ${formData.message}`;
+
+            const whatsappUrl = `https://wa.me/919899805983?text=${encodeURIComponent(whatsappMessage)}`;
+
+            // Show success message
+            const submitBtn = consultationForm.querySelector('.btn-submit');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '✓ Redirecting to WhatsApp...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+
+                // Reset form
+                consultationForm.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+
+                // Close modal
+                modalOverlay.classList.remove('active');
+                consultationModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }, 800);
+        });
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const navbar = document.getElementById('navbar');
+
+        mobileMenu.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+
+                // Close mobile menu
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenu.querySelector('i').className = 'fas fa-bars';
+                }
+            });
+        });
+
+        // Floating Navigation Bar (Shrink on scroll)
+        window.addEventListener('scroll', function () {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // 2. Chatbot Logic
+        const chatToggle = document.getElementById('chatbot-toggle');
+        const chatWindow = document.getElementById('chatbot-window');
+        const chatCloseBtn = document.getElementById('chatbot-close-btn');
+        const chatMessages = document.getElementById('chatbot-messages');
+        const chatInput = document.getElementById('chatbot-input');
+        const chatSendBtn = document.getElementById('chatbot-send-btn');
+
+        chatToggle.addEventListener('click', () => {
+            chatWindow.classList.toggle('active');
+        });
+
+        chatCloseBtn.addEventListener('click', () => {
+            chatWindow.classList.remove('active');
+        });
+
+        chatSendBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            const userMessage = chatInput.value.trim();
+            if (userMessage === '') return;
+
+            // Display user message
+            const userDiv = document.createElement('div');
+            userDiv.className = 'chatbot-message user';
+            userDiv.textContent = userMessage;
+            chatMessages.appendChild(userDiv);
+
+            chatInput.value = ''; // Clear input
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll down
+
+            // Simulate bot response
+            setTimeout(() => {
+                let botResponse = 'Thank you for your message! Our team will follow up via email/phone shortly.';
+                const lowerMsg = userMessage.toLowerCase();
+
+                // Contact & Phone
+                if (lowerMsg.includes('contact') || lowerMsg.includes('phone') || lowerMsg.includes('call') || lowerMsg.includes('number')) {
+                    botResponse = '📞 Contact us anytime!\n\n☎️ Direct: +91 98998 05983\n📧 Email: sales@jsfurniture.com\n\nHa chalega? Direct baat kar sakte ho! 😊';
+                }
+                // Hours & Timing
+                else if (lowerMsg.includes('hours') || lowerMsg.includes('timing') || lowerMsg.includes('open') || lowerMsg.includes('khule')) {
+                    botResponse = '🕰️ Hamara timings:\n\n⏰ Mon–Sat: 10:00 AM – 8:00 PM\n⏰ Sunday: 11:00 AM – 6:00 PM\n\nKab aana hai? Anytime welcome! 🎉';
+                }
+                // Address & Location
+                else if (lowerMsg.includes('address') || lowerMsg.includes('location') || lowerMsg.includes('showroom') || lowerMsg.includes('jagah')) {
+                    botResponse = '📍 Hamara showroom:\n\n🏠 B-1, W.H.S. Timber Market\n🌍 Kirti Nagar, New Delhi - 110015\n🚇 Metro: Kirti Nagar Metro Station\n\nKirti Nagar mein sab jaante hain J.S. Furniture ko! 💎';
+                }
+                // Beds & Designs
+                else if (lowerMsg.includes('bed') || lowerMsg.includes('design') || lowerMsg.includes('poster') || lowerMsg.includes('double') || lowerMsg.includes('furniture')) {
+                    botResponse = '🛏️ Hum banate hain:\n\n✨ Luxury Double Beds\n👑 Royal Poster Beds\n📦 Hydraulic Storage Solutions\n🎨 Custom Console Sets\n🏡 Full Interior Designs\n\nAapka swapmna - Hamara naam! 🌟';
+                }
+                // Price & Quote
+                else if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('quote') || lowerMsg.includes('kitne') || lowerMsg.includes('daam')) {
+                    botResponse = '💰 Pricing bilkul alag-alag hoti hai!\n\n🌳 Wood type (Teak, Sheesham, Oak)\n📏 Size & Dimensions\n🎨 Design complexity\n\nWhatsApp karo direct - Best quote denge! 😊';
+                }
+                // Thank you & Greeting
+                else if (lowerMsg.includes('thank') || lowerMsg.includes('thanks') || lowerMsg.includes('dhanyavaad') || lowerMsg.includes('shukriya')) {
+                    botResponse = '🙏 Bilkul welcome! Aapka saath paane se khushi hui! Aur kuch poochna hai? 😊';
+                }
+                // Delivery & Shipping
+                else if (lowerMsg.includes('delivery') || lowerMsg.includes('ship') || lowerMsg.includes('deliver') || lowerMsg.includes('bhejoge')) {
+                    botResponse = '🚚 Delivery details:\n\n✅ Pan India Delivery available\n🏠 Home installation provided\n⚡ Fast & reliable shipping\n📦 Safe packaging guaranteed\n\nDilli se kahi bhi! 🌏';
+                }
+                // Custom Design
+                else if (lowerMsg.includes('custom') || lowerMsg.includes('design') || lowerMsg.includes('bespoke') || lowerMsg.includes('banwaoge')) {
+                    botResponse = '🎨 Bilkul! Custom design hota hai!\n\n✏️ Aapka idea + Hamara expertise\n🖼️ 3D visualization denge\n🔨 Handcrafted banayenge\n⭐ Unique & one-of-a-kind\n\nBatao aapka dream kya hai! 💭';
+                }
+                // Quality & Material
+                else if (lowerMsg.includes('quality') || lowerMsg.includes('wood') || lowerMsg.includes('material') || lowerMsg.includes('maza')) {
+                    botResponse = '🌳 100% Solid Wood!\n\n✅ Premium quality assured\n✅ Durable & long-lasting\n✅ Eco-friendly materials\n✅ Master craftsmanship\n\nSaal sau saal chalega! 💪';
+                }
+                // Greeting
+                else if (lowerMsg.includes('hi') || lowerMsg.includes('hello') || lowerMsg.includes('hey') || lowerMsg.includes('namaste')) {
+                    botResponse = '👋 Namaste & Welcome to J.S. Furniture! 🎉\n\nKaise ho? Main yahan hoon aapki madad ke liye!\n\nPucho:\n✨ Designs ke baare mein\n📞 Contact details\n🏪 Showroom location\n💰 Pricing\n\nKya chahiye aapko? 😊';
+                }
+                // About Company
+                else if (lowerMsg.includes('about') || lowerMsg.includes('company') || lowerMsg.includes('aap') || lowerMsg.includes('tumhare') || lowerMsg.includes('legacy')) {
+                    botResponse = '🏢 J.S. Furniture ke baare mein:\n\n👑 Decades old brand\n🌟 Kirti Nagar market mein trusted\n💎 Luxury furniture specialists\n🎯 Factory direct pricing\n🛠️ Expert craftsmanship\n\nDelhi ka favorite furniture brand! 🎉';
+                }
+                // Yes/No responses
+                else if (lowerMsg.includes('yes') || lowerMsg.includes('haan') || lowerMsg.includes('ok')) {
+                    botResponse = '✅ Shukriya! Kuch aur poochna hai? 😊';
+                }
+                else if (lowerMsg.includes('no') || lowerMsg.includes('nahi')) {
+                    botResponse = '🙏 Theek hai! Kabhi zarurat pado to contact karna. Thank you! 💚';
+                }
+
+                const botDiv = document.createElement('div');
+                botDiv.className = 'chatbot-message bot';
+                botDiv.textContent = botResponse;
+                chatMessages.appendChild(botDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
