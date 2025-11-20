@@ -302,20 +302,9 @@
             text-align: center;
              will-change: transform;  /* enhances GPU acceleration */
     transform: translateZ(0); /* forces GPU layer */
-               position: relative;
                overflow: hidden;
-    background: #121212;
         }
 
-        .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("/pexels-medhat-ayad-122846-439227.jpg") center/cover no-repeat;
-    opacity: 0.25;
-    z-index: -1;
-    will-change: opacity, transform;
-}
 
 
         .hero-content {
